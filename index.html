@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link rel="icon" type="image/png" href="images/tttlogo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="language-select">
+        <select id="languageSelect">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+    <button id="undoMove" class="undo-button" disabled>
+        <i class="fas fa-undo"></i>
+        <span data-translate="undoMove">Zug zurück</span>
+    </button>
+    <div class="container">
+        <h1 data-translate="title">TicTacToe</h1>
+        <div class="game-setup">
+            <div class="difficulty-selector">
+                <select id="gameMode">
+                    <option value="friend" data-translate="againstFriend">Gegen Freund spielen</option>
+                    <option value="unbeatable" data-translate="againstAI">Gegen KI spielen</option>
+                </select>
+            </div>
+            <div class="coin-flip-container">
+                <button id="coinFlip" class="coin-button">
+                    <i class="fas fa-coins"></i>
+                    <span data-translate="coinFlip">Münzwurf</span>
+                </button>
+            </div>
+            <div class="timer-switch-container">
+                <div class="timer-label">
+                    <span data-translate="timeLimit">Zeitlimit</span>
+                    <div class="timer-display">
+                        <span id="timeLeft">1:00</span>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="timerToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="score-board">
+            <div class="player" id="player-x">
+                <span class="symbol">X</span>
+                <span class="points">0</span>
+            </div>
+            <div class="player" id="player-o">
+                <span class="symbol">O</span>
+                <span class="points">0</span>
+            </div>
+        </div>
+        
+        <div class="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <div class="winner-message"></div>
+        <button id="resetScores" class="reset-button" data-translate="resetScore">
+            Punktestand zurücksetzen
+        </button>
+    </div>
+    <div class="timer-display">
+        <i class="fas fa-stopwatch"></i>
+        <span id="timeLeft">1:00</span>
+    </div>
+    <div class="coin-overlay">
+        <div class="coin-animation">
+            <div class="coin-side coin-front">
+                <i class="fas fa-crown"></i>
+            </div>
+            <div class="coin-side coin-back">
+                <i class="fas fa-hashtag"></i>
+            </div>
+        </div>
+    </div>
+    <div class="settings-overlay"></div>
+    <div class="keyboard-hint">
+        <p data-translate="keyboardControls">Tastatursteuerung:</p>
+        <div class="numpad-layout">
+            <div>1 2 3</div>
+            <div>4 5 6</div>
+            <div>7 8 9</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
